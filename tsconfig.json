@@ -1,6 +1,19 @@
 {
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["unplugin-icons/types/vue", "vite/client", "vitest/globals"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "composite": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"],
   "files": [],
   "references": [
+    {
+      "path": "./tsconfig.vite-config.json"
+    },
     {
       "path": "./tsconfig.node.json"
     },
