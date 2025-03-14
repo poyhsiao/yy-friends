@@ -4,6 +4,10 @@
  *
  * 展示用戶評價和反饋
  */
+import { useThemeStore } from '@/stores/theme';
+
+// 獲取主題狀態
+const themeStore = useThemeStore();
 
 // 用戶評價
 const testimonials = [
@@ -35,7 +39,7 @@ const testimonials = [
 </script>
 
 <template>
-  <section class="testimonials-section">
+  <section class="testimonials-section" :class="{ 'dark-theme': themeStore.theme === 'dark' }">
     <div class="section-header">
       <h2>用戶心得</h2>
       <p>聽聽他們在 YY Friends 的故事</p>
@@ -64,6 +68,9 @@ const testimonials = [
 .testimonials-section {
   padding: 4rem 0;
   margin-bottom: 4rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .section-header {
@@ -76,11 +83,13 @@ const testimonials = [
   color: var(--el-color-primary);
   margin-bottom: 1rem;
   font-weight: 600;
+  transition: color 0.3s;
 }
 
 .section-header p {
   font-size: 1.25rem;
   color: var(--el-text-color-secondary);
+  transition: color 0.3s;
 }
 
 .testimonial-card {
@@ -92,6 +101,9 @@ const testimonials = [
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
 }
 
 .testimonial-content {
@@ -103,6 +115,7 @@ const testimonials = [
   line-height: 1.6;
   color: var(--el-text-color-regular);
   font-style: italic;
+  transition: color 0.3s;
 }
 
 .testimonial-author {
@@ -122,11 +135,39 @@ const testimonials = [
   font-size: 1.2rem;
   color: var(--el-color-primary);
   margin-bottom: 0.25rem;
+  transition: color 0.3s;
 }
 
 .author-info p {
   font-size: 0.9rem;
   color: var(--el-text-color-secondary);
+  transition: color 0.3s;
+}
+
+/* 暗黑模式樣式 */
+.dark-theme .section-header h2 {
+  color: var(--el-color-primary-light-3);
+}
+
+.dark-theme .section-header p {
+  color: var(--el-text-color-primary);
+}
+
+.dark-theme .testimonial-card {
+  background-color: var(--el-bg-color-overlay);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .testimonial-content p {
+  color: var(--el-text-color-primary);
+}
+
+.dark-theme .author-info h3 {
+  color: var(--el-color-primary-light-3);
+}
+
+.dark-theme .author-info p {
+  color: var(--el-text-color-primary);
 }
 
 @media (max-width: 768px) {

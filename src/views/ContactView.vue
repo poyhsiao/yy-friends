@@ -251,17 +251,25 @@ const contactInfo = [
 
 .contact-info,
 .contact-form {
-  background-color: white;
+  background-color: var(--el-bg-color);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--el-border-color);
+  box-shadow: var(--el-box-shadow-light);
   padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.contact-info:hover,
+.contact-form:hover {
+  box-shadow: var(--el-box-shadow);
+  border-color: var(--el-border-color-darker);
 }
 
 .contact-info h2,
 .contact-form h2,
 .map-section h2 {
   font-size: 1.8rem;
-  color: var(--el-color-primary);
+  color: var(--el-text-color-primary);
   margin-bottom: 1.5rem;
 }
 
@@ -311,14 +319,16 @@ const contactInfo = [
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--el-color-primary-light-8);
-  color: var(--el-color-primary);
+  background-color: var(--el-fill-color-light);
+  color: var(--el-text-color-primary);
   transition: all 0.3s;
+  border: 1px solid var(--el-border-color-light);
 }
 
 .social-icons a:hover {
   background-color: var(--el-color-primary);
-  color: white;
+  color: var(--el-color-white);
+  transform: translateY(-2px);
 }
 
 .form-row {
@@ -351,23 +361,25 @@ const contactInfo = [
 
 .map-placeholder {
   height: 100%;
-  background-color: var(--el-color-primary-light-9);
+  background-color: var(--el-fill-color-blank);
+  border: 1px solid var(--el-border-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: var(--el-text-color-secondary);
+  transition: all 0.3s ease;
 }
 
-.map-placeholder .el-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--el-color-primary);
+.map-placeholder:hover {
+  border-color: var(--el-border-color-darker);
+  box-shadow: var(--el-box-shadow-light);
 }
 
 .map-address {
   font-weight: bold;
   margin-top: 0.5rem;
+  color: var(--el-text-color-primary);
 }
 
 /* 響應式設計 */

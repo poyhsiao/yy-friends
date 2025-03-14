@@ -4,6 +4,10 @@
  *
  * 展示平台的重要統計數據
  */
+import { useThemeStore } from '@/stores/theme';
+
+// 獲取主題狀態
+const themeStore = useThemeStore();
 
 // 統計數據
 const stats = [
@@ -15,7 +19,7 @@ const stats = [
 </script>
 
 <template>
-  <section class="stats-section">
+  <section class="stats-section" :class="{ 'dark-theme': themeStore.theme === 'dark' }">
     <div v-for="(stat, index) in stats" :key="index" class="stat-item">
       <el-icon class="stat-icon"><component :is="stat.icon" /></el-icon>
       <div class="stat-value">{{ stat.value }}</div>
@@ -41,6 +45,9 @@ const stats = [
   border-radius: 16px;
   color: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition:
+    background 0.3s,
+    box-shadow 0.3s;
 }
 
 .stat-item {
@@ -49,7 +56,9 @@ const stats = [
   padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s;
 }
 
 .stat-item:hover {
@@ -59,17 +68,34 @@ const stats = [
 .stat-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  transition: color 0.3s;
 }
 
 .stat-value {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  transition: color 0.3s;
 }
 
 .stat-label {
   font-size: 1.1rem;
   opacity: 0.9;
+  transition: color 0.3s;
+}
+
+/* 暗黑模式樣式 */
+.dark-theme {
+  background: linear-gradient(
+    135deg,
+    var(--el-color-primary-dark-2) 0%,
+    var(--el-color-primary) 100%
+  );
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .stat-item {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {

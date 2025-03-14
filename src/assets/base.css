@@ -34,6 +34,58 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+
+  /* 自定義暗黑模式變量 */
+  --dark-bg-color: var(--vt-c-black);
+  --dark-bg-color-soft: var(--vt-c-black-soft);
+  --dark-bg-color-mute: var(--vt-c-black-mute);
+
+  --dark-text-color: var(--vt-c-text-dark-1);
+  --dark-text-color-soft: var(--vt-c-text-dark-2);
+
+  --dark-border-color: var(--vt-c-divider-dark-2);
+  --dark-border-hover-color: var(--vt-c-divider-dark-1);
+
+  /* 新增元素UI變量 */
+  --card-bg-color: white;
+  --card-bg-color-dark: var(--vt-c-black-soft);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --card-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --card-shadow-hover-dark: 0 8px 24px rgba(0, 0, 0, 0.4);
+
+  /* 新增主題色變量 */
+  --primary-color: var(--el-color-primary);
+  --primary-color-light: var(--el-color-primary-light-3);
+  --primary-color-dark: var(--el-color-primary-dark-2);
+
+  /* 過渡效果 */
+  --transition-duration: 0.3s;
+  --transition-timing: ease;
+  --transition-all: all var(--transition-duration) var(--transition-timing);
+  --transition-transform: transform var(--transition-duration) var(--transition-timing);
+  --transition-colors:
+    background-color var(--transition-duration) var(--transition-timing),
+    color var(--transition-duration) var(--transition-timing),
+    border-color var(--transition-duration) var(--transition-timing);
+}
+
+/* 暗黑模式變量 */
+.dark {
+  --color-background: var(--dark-bg-color);
+  --color-background-soft: var(--dark-bg-color-soft);
+  --color-background-mute: var(--dark-bg-color-mute);
+
+  --color-border: var(--dark-border-color);
+  --color-border-hover: var(--dark-border-hover-color);
+
+  --color-heading: var(--dark-text-color);
+  --color-text: var(--dark-text-color);
+
+  /* 卡片樣式覆蓋 */
+  --card-bg-color: var(--card-bg-color-dark);
+  --card-shadow: var(--card-shadow-dark);
+  --card-shadow-hover: var(--card-shadow-hover-dark);
 }
 
 *,
@@ -48,9 +100,7 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
+  transition: var(--transition-colors);
   line-height: 1.6;
   font-family:
     Inter,

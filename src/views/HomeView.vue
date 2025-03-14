@@ -11,10 +11,13 @@ import AboutSection from '@/components/home/AboutSection.vue';
 import StatsSection from '@/components/home/StatsSection.vue';
 import TestimonialsSection from '@/components/home/TestimonialsSection.vue';
 import { RouterLink } from 'vue-router';
+import { useThemeStore } from '@/stores/theme';
+
+const themeStore = useThemeStore();
 </script>
 
 <template>
-  <div class="home-view">
+  <div class="home-view" :class="{ 'dark-theme': themeStore.theme === 'dark' }">
     <HeroSection />
     <ServicesSection />
     <AboutSection />
@@ -22,7 +25,7 @@ import { RouterLink } from 'vue-router';
     <TestimonialsSection />
 
     <!-- 聯絡我們 -->
-    <section class="contact-cta">
+    <section class="contact-cta" :class="{ 'dark-theme': themeStore.theme === 'dark' }">
       <h2>準備好開始了嗎？</h2>
       <p>聯絡我們，了解我們如何幫助您實現目標</p>
       <RouterLink to="/contact">
@@ -35,6 +38,9 @@ import { RouterLink } from 'vue-router';
 <style scoped>
 .home-view {
   padding: 0;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 /* 聯絡我們 CTA */
@@ -44,18 +50,39 @@ import { RouterLink } from 'vue-router';
   background-color: var(--el-color-primary-light-9);
   border-radius: 16px;
   margin-bottom: 4rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .contact-cta h2 {
   font-size: 2rem;
   color: var(--el-color-primary);
   margin-bottom: 1rem;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
 .contact-cta p {
   font-size: 1.2rem;
   color: var(--el-text-color-regular);
   margin-bottom: 2rem;
+  transition: color 0.3s;
+}
+
+/* 暗黑模式樣式 */
+.dark-theme .contact-cta {
+  background-color: var(--el-color-primary-dark-2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .contact-cta h2 {
+  color: var(--el-color-white);
+}
+
+.dark-theme .contact-cta p {
+  color: var(--el-text-color-primary);
 }
 
 @media (max-width: 768px) {

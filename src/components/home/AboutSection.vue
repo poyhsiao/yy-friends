@@ -5,10 +5,14 @@
  * 展示平台理念和社群價值
  */
 import { RouterLink } from 'vue-router';
+import { useThemeStore } from '@/stores/theme';
+
+// 獲取主題狀態
+const themeStore = useThemeStore();
 </script>
 
 <template>
-  <section class="about-section">
+  <section class="about-section" :class="{ 'dark-theme': themeStore.theme === 'dark' }">
     <div class="about-content">
       <div class="section-header">
         <h2>關於 YY Friends</h2>
@@ -44,6 +48,9 @@ import { RouterLink } from 'vue-router';
   background-color: var(--el-color-primary-light-9);
   border-radius: 16px;
   padding: 3rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .about-content {
@@ -60,11 +67,13 @@ import { RouterLink } from 'vue-router';
   color: var(--el-color-primary);
   margin-bottom: 0.5rem;
   font-weight: 600;
+  transition: color 0.3s;
 }
 
 .section-header p {
   font-size: 1.25rem;
   color: var(--el-text-color-secondary);
+  transition: color 0.3s;
 }
 
 .about-description {
@@ -72,6 +81,7 @@ import { RouterLink } from 'vue-router';
   line-height: 1.6;
   color: var(--el-text-color-regular);
   font-size: 1.1rem;
+  transition: color 0.3s;
 }
 
 .about-image {
@@ -88,7 +98,10 @@ import { RouterLink } from 'vue-router';
   align-items: center;
   border-radius: 16px;
   color: var(--el-color-primary);
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s,
+    color 0.3s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -99,6 +112,30 @@ import { RouterLink } from 'vue-router';
 .image-placeholder .el-icon {
   font-size: 4rem;
   margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+/* 暗黑模式樣式 */
+.dark-theme {
+  background-color: var(--el-color-primary-light-1);
+}
+
+.dark-theme .section-header h2 {
+  color: var(--el-color-white);
+}
+
+.dark-theme .section-header p {
+  color: var(--el-text-color-primary);
+}
+
+.dark-theme .about-description {
+  color: var(--el-text-color-primary);
+}
+
+.dark-theme .image-placeholder {
+  background-color: var(--el-bg-color-overlay);
+  color: var(--el-color-primary-light-3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {

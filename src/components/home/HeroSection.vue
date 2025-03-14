@@ -6,10 +6,14 @@
  * 包含吸引人的標題、簡短說明和註冊/登入按鈕
  */
 import { RouterLink } from 'vue-router';
+import { useThemeStore } from '@/stores/theme';
+
+// 獲取主題狀態
+const themeStore = useThemeStore();
 </script>
 
 <template>
-  <section class="hero-section">
+  <section class="hero-section" :class="{ 'dark-theme': themeStore.theme === 'dark' }">
     <div class="hero-content">
       <h1>找到屬於你的真摯情誼</h1>
       <p>
@@ -44,6 +48,9 @@ import { RouterLink } from 'vue-router';
   background: linear-gradient(135deg, var(--el-color-primary-light-9) 0%, white 100%);
   border-radius: 16px;
   overflow: hidden;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
 
 .hero-content {
@@ -57,6 +64,7 @@ import { RouterLink } from 'vue-router';
   margin-bottom: 1.5rem;
   line-height: 1.2;
   font-weight: 700;
+  transition: color 0.3s;
 }
 
 .hero-content p {
@@ -65,6 +73,7 @@ import { RouterLink } from 'vue-router';
   margin-bottom: 2rem;
   line-height: 1.6;
   max-width: 600px;
+  transition: color 0.3s;
 }
 
 .hero-buttons {
@@ -90,7 +99,10 @@ import { RouterLink } from 'vue-router';
   align-items: center;
   border-radius: 16px;
   color: var(--el-color-primary);
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .image-placeholder:hover {
@@ -100,6 +112,25 @@ import { RouterLink } from 'vue-router';
 .image-placeholder .el-icon {
   font-size: 4rem;
   margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+/* 暗黑模式樣式 */
+.dark-theme {
+  background: linear-gradient(135deg, var(--el-color-primary-dark-2) 0%, var(--el-bg-color) 100%);
+}
+
+.dark-theme .hero-content h1 {
+  color: var(--el-color-white);
+}
+
+.dark-theme .hero-content p {
+  color: var(--el-text-color-primary);
+}
+
+.dark-theme .image-placeholder {
+  background-color: var(--el-color-primary-light-1);
+  color: var(--el-color-white);
 }
 
 @media (max-width: 768px) {

@@ -27,6 +27,9 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .main-content {
@@ -35,6 +38,15 @@ onMounted(() => {
   margin: 0 auto;
   width: 100%;
   margin-top: 60px; /* 為固定定位的導航欄添加頂部間距 */
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+/* 暗黑模式樣式 */
+.dark-mode .main-content {
+  background-color: var(--el-bg-color);
+  color: var(--el-text-color-primary);
 }
 
 @media (max-width: 768px) {

@@ -5,6 +5,10 @@
  * 展示平台提供的主要功能和服務
  */
 import { RouterLink } from 'vue-router';
+import { useThemeStore } from '@/stores/theme';
+
+// 獲取主題狀態
+const themeStore = useThemeStore();
 
 // 服務項目列表
 const services = [
@@ -32,7 +36,7 @@ const services = [
 </script>
 
 <template>
-  <section class="services-section">
+  <section class="services-section" :class="{ 'dark-theme': themeStore.theme === 'dark' }">
     <div class="section-header">
       <h2>我們的特色</h2>
       <p>打造優質的社交體驗，讓每個人都能找到屬於自己的圈子</p>
@@ -60,6 +64,9 @@ const services = [
 .services-section {
   padding: 4rem 0;
   margin-bottom: 4rem;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .section-header {
@@ -72,11 +79,13 @@ const services = [
   color: var(--el-color-primary);
   margin-bottom: 1rem;
   font-weight: 600;
+  transition: color 0.3s;
 }
 
 .section-header p {
   font-size: 1.25rem;
   color: var(--el-text-color-secondary);
+  transition: color 0.3s;
 }
 
 .services-grid {
@@ -93,7 +102,8 @@ const services = [
   text-align: center;
   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    background-color 0.3s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -111,23 +121,27 @@ const services = [
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s;
 }
 
 .service-icon .el-icon {
   font-size: 2rem;
   color: var(--el-color-primary);
+  transition: color 0.3s;
 }
 
 .service-card h3 {
   font-size: 1.5rem;
   color: var(--el-color-primary);
   margin-bottom: 1rem;
+  transition: color 0.3s;
 }
 
 .service-card p {
   color: var(--el-text-color-regular);
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  transition: color 0.3s;
 }
 
 .learn-more {
@@ -142,6 +156,48 @@ const services = [
 
 .learn-more:hover {
   color: var(--el-color-primary-light-3);
+}
+
+/* 暗黑模式樣式 */
+.dark-theme .section-header h2 {
+  color: var(--el-color-primary-light-3);
+}
+
+.dark-theme .section-header p {
+  color: var(--el-text-color-primary);
+}
+
+.dark-theme .service-card {
+  background-color: var(--el-bg-color-overlay);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .service-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .service-icon {
+  background-color: var(--el-color-primary-light-1);
+}
+
+.dark-theme .service-icon .el-icon {
+  color: var(--el-color-white);
+}
+
+.dark-theme .service-card h3 {
+  color: var(--el-color-primary-light-3);
+}
+
+.dark-theme .service-card p {
+  color: var(--el-text-color-primary);
+}
+
+.dark-theme .learn-more {
+  color: var(--el-color-primary-light-3);
+}
+
+.dark-theme .learn-more:hover {
+  color: var(--el-color-primary-light-5);
 }
 
 @media (max-width: 768px) {

@@ -60,7 +60,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <header class="app-header">
+  <header class="app-header" :class="{ 'dark-theme': themeStore.theme === 'dark' }">
     <div class="header-container">
       <!-- Logo 区域 - 左側 -->
       <div class="logo-container">
@@ -167,6 +167,15 @@ onMounted(() => {
   z-index: 100;
   background-color: var(--el-bg-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
+}
+
+/* 暗黑模式樣式 */
+.dark-theme {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .header-container {
@@ -298,56 +307,39 @@ onMounted(() => {
 .mobile-theme-button,
 .mobile-settings-button,
 .mobile-login-button {
-  width: 100%;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   justify-content: flex-start;
+  padding: 0.8rem 1rem;
 }
 
-/* 响应式设计 */
+.mobile-theme-button .el-icon,
+.mobile-settings-button .el-icon,
+.mobile-login-button .el-icon {
+  font-size: 1.2rem;
+}
+
+/* 響應式設計 */
 @media (max-width: 768px) {
   .desktop-nav {
     display: none;
-  }
-
-  .menu-toggle {
-    display: flex;
-    font-size: 1.2rem; /* 增加菜單按鈕大小 */
-    padding: 0.5rem; /* 增加按鈕點擊區域 */
-  }
-
-  .logo-text {
-    font-size: 1.2rem;
   }
 
   .login-button {
     display: none;
   }
 
-  .theme-toggle-button,
-  .settings-button {
-    padding: 0.5rem; /* 增加按鈕點擊區域 */
-  }
-
-  /* 調整移動端抽屉菜單的文字大小 */
-  .mobile-nav-link {
-    font-size: 1.2rem;
-    padding: 1rem 0; /* 增加點擊區域 */
-  }
-
-  /* 增加移動端按鈕的大小 */
-  .mobile-theme-button,
-  .mobile-settings-button,
-  .mobile-login-button {
-    font-size: 1.1rem;
-    padding: 0.8rem;
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
 @media (min-width: 769px) {
   .hidden {
-    display: none !important;
+    display: none;
   }
 }
 </style>

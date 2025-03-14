@@ -7,9 +7,13 @@
  */
 import { ref } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
+import { useThemeStore } from '@/stores/theme';
 
 // 獲取當前路由
 const route = useRoute();
+
+// 獲取主題狀態
+const themeStore = useThemeStore();
 
 // 移動端導航按鈕
 const navItems = [
@@ -32,7 +36,7 @@ const footerLinks = [
 
 <template>
   <!-- 移動端導航欄 -->
-  <footer class="app-footer">
+  <footer class="app-footer" :class="{ 'dark-theme': themeStore.theme === 'dark' }">
     <!-- 移動端導航 -->
     <div class="mobile-nav-container">
       <RouterLink
@@ -84,6 +88,15 @@ const footerLinks = [
   background-color: var(--el-bg-color);
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    box-shadow 0.3s;
+}
+
+/* 暗黑模式樣式 */
+.dark-theme {
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* 移動端導航樣式 */
