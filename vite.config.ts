@@ -33,7 +33,11 @@ export default defineConfig({
         // Auto import icon components
         // 自动导入图标组件
         IconsResolver({
+          alias: {
+            msi: 'material-symbols-light',
+          },
           prefix: 'Icon',
+          enabledCollections: ['ep', 'mdi', 'msi', 'ic'],
         }),
       ],
 
@@ -44,7 +48,11 @@ export default defineConfig({
         // Auto register icon components
         // 自动注册图标组件
         IconsResolver({
-          enabledCollections: ['ep'],
+          alias: {
+            msi: 'material-symbols-light',
+          },
+          prefix: 'Icon',
+          enabledCollections: ['ep', 'mdi', 'msi', 'ic'],
         }),
         // Auto register Element Plus components
         // 自动导入 Element Plus 组件
@@ -54,6 +62,10 @@ export default defineConfig({
       dts: path.resolve(pathSrc, 'components.d.ts'),
     }),
     Icons({
+      compiler: 'vue3',
+      alias: {
+        msi: 'material-symbols-light',
+      },
       autoInstall: true,
     }),
     Inspect(),

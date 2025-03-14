@@ -1,0 +1,161 @@
+<script setup lang="ts">
+/**
+ * ServicesSection 組件
+ *
+ * 展示平台提供的主要功能和服務
+ */
+import { RouterLink } from 'vue-router';
+
+// 服務項目列表
+const services = [
+  {
+    id: 1,
+    title: '智能配對',
+    description: '運用先進的演算法，為您推薦最適合的交友對象。',
+  },
+  {
+    id: 2,
+    title: '即時聊天',
+    description: '安全、便捷的即時通訊功能，讓您輕鬆與新朋友交流。',
+  },
+  {
+    id: 3,
+    title: '興趣社群',
+    description: '基於共同興趣的社群活動，讓您找到志同道合的夥伴。',
+  },
+  {
+    id: 4,
+    title: '活動配對',
+    description: '定期舉辦線上線下活動，創造自然交友的機會。',
+  },
+];
+</script>
+
+<template>
+  <section class="services-section">
+    <div class="section-header">
+      <h2>我們的特色</h2>
+      <p>打造優質的社交體驗，讓每個人都能找到屬於自己的圈子</p>
+    </div>
+
+    <div class="services-grid">
+      <div v-for="service in services" :key="service.id" class="service-card">
+        <div class="service-icon">
+          <el-icon v-if="service.id === 1"><Icon-mdi-magic-staff /></el-icon>
+          <el-icon v-else-if="service.id === 2"><Icon-mdi-chat-processing-outline /></el-icon>
+          <el-icon v-else-if="service.id === 3"><Icon-mdi-account-group /></el-icon>
+          <el-icon v-else><Icon-mdi-calendar /></el-icon>
+        </div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <RouterLink :to="`/services#${service.id}`" class="learn-more">
+          了解更多 <el-icon><arrow-right /></el-icon>
+        </RouterLink>
+      </div>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.services-section {
+  padding: 4rem 0;
+  margin-bottom: 4rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--el-color-primary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.section-header p {
+  font-size: 1.25rem;
+  color: var(--el-text-color-secondary);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.service-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  background-color: var(--el-color-primary-light-9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon .el-icon {
+  font-size: 2rem;
+  color: var(--el-color-primary);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: var(--el-color-primary);
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: var(--el-text-color-regular);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--el-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.learn-more:hover {
+  color: var(--el-color-primary-light-3);
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 2rem 0;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+</style>
