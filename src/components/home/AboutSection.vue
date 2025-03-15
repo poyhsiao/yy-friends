@@ -13,6 +13,9 @@ const themeStore = useThemeStore();
 
 <template>
   <section class="about-section" :class="{ 'dark-theme': themeStore.theme === 'dark' }">
+    <div class="about-background-container">
+      <img src="@/assets/images/about-background.svg" alt="社群活動背景" class="about-background" />
+    </div>
     <div class="about-content">
       <div class="section-header">
         <h2>關於 YY Friends</h2>
@@ -29,32 +32,45 @@ const themeStore = useThemeStore();
         <el-button>探索我們的故事</el-button>
       </RouterLink>
     </div>
-    <div class="about-image">
-      <div class="image-placeholder">
-        <el-icon><Icon-ic-baseline-group /></el-icon>
-        <span>社群活動剪影</span>
-      </div>
-    </div>
   </section>
 </template>
 
 <style scoped>
 .about-section {
+  position: relative;
+  margin-bottom: 4rem;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 450px;
   display: flex;
   align-items: center;
-  gap: 3rem;
-  padding: 4rem 0;
-  margin-bottom: 4rem;
-  background-color: var(--el-color-primary-light-9);
-  border-radius: 16px;
-  padding: 3rem;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  transition: color 0.3s;
+}
+
+.about-background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.about-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  transition: transform 0.3s ease;
 }
 
 .about-content {
-  flex: 1;
+  position: relative;
+  z-index: 1;
+  padding: 3rem;
+  max-width: 650px;
+  margin-left: 2rem;
 }
 
 .about-content .section-header {
@@ -84,42 +100,7 @@ const themeStore = useThemeStore();
   transition: color 0.3s;
 }
 
-.about-image {
-  flex: 1;
-}
-
-.image-placeholder {
-  width: 100%;
-  height: 400px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 16px;
-  color: var(--el-color-primary);
-  transition:
-    transform 0.3s ease,
-    background-color 0.3s,
-    color 0.3s;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.image-placeholder:hover {
-  transform: translateY(-5px);
-}
-
-.image-placeholder .el-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  transition: color 0.3s;
-}
-
 /* 暗黑模式樣式 */
-.dark-theme {
-  background-color: var(--el-color-primary-light-1);
-}
-
 .dark-theme .section-header h2 {
   color: var(--el-color-white);
 }
@@ -132,17 +113,17 @@ const themeStore = useThemeStore();
   color: var(--el-text-color-primary);
 }
 
-.dark-theme .image-placeholder {
-  background-color: var(--el-bg-color-overlay);
-  color: var(--el-color-primary-light-3);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
 @media (max-width: 768px) {
   .about-section {
-    flex-direction: column;
     text-align: center;
     padding: 2rem;
+  }
+
+  .about-content {
+    margin-left: 0;
+    padding: 2rem;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .about-content .section-header {
@@ -152,9 +133,28 @@ const themeStore = useThemeStore();
   .section-header h2 {
     font-size: 2rem;
   }
+}
 
-  .image-placeholder {
-    height: 300px;
+@media (max-width: 480px) {
+  .about-section {
+    padding: 1.5rem;
+    min-height: 400px;
+  }
+
+  .about-content {
+    padding: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+  }
+
+  .about-description {
+    font-size: 1rem;
   }
 }
 </style>

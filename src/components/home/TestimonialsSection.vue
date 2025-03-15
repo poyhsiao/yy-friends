@@ -5,6 +5,7 @@
  * 展示用戶評價和反饋
  */
 import { useThemeStore } from '@/stores/theme';
+import { ChatDotRound } from '@element-plus/icons-vue';
 
 // 獲取主題狀態
 const themeStore = useThemeStore();
@@ -45,11 +46,14 @@ const testimonials = [
       <p>聽聽他們在 YY Friends 的故事</p>
     </div>
 
-    <el-carousel :interval="5000" type="card" height="300px">
-      <el-carousel-item v-for="testimonial in testimonials" :key="testimonial.id">
-        <div class="testimonial-card">
+    <div class="testimonials-container">
+      <div class="testimonials-grid">
+        <div class="testimonial-card" v-for="testimonial in testimonials" :key="testimonial.id">
+          <div class="quote-icon">
+            <el-icon><ChatDotRound /></el-icon>
+          </div>
           <div class="testimonial-content">
-            <p>"{{ testimonial.content }}"</p>
+            <p>{{ testimonial.content }}</p>
           </div>
           <div class="testimonial-author">
             <img :src="testimonial.avatar" :alt="testimonial.name" class="author-avatar" />
@@ -59,8 +63,8 @@ const testimonials = [
             </div>
           </div>
         </div>
-      </el-carousel-item>
-    </el-carousel>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -103,11 +107,31 @@ const testimonials = [
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition:
     background-color 0.3s,
-    box-shadow 0.3s;
+    box-shadow 0.3s,
+    transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.quote-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: var(--el-color-primary-light-8);
+  font-size: 1.5rem;
+  opacity: 0.7;
+  transition: color 0.3s;
 }
 
 .testimonial-content {
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-content p {
@@ -170,17 +194,98 @@ const testimonials = [
   color: var(--el-text-color-primary);
 }
 
+.dark-theme .quote-icon {
+  color: var(--el-color-primary-light-5);
+  opacity: 0.5;
+}
+
+.testimonials-container {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .testimonials-section {
     padding: 2rem 0;
+    margin-bottom: 2rem;
   }
 
   .section-header h2 {
     font-size: 2rem;
   }
 
+  .section-header p {
+    font-size: 1.1rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .testimonial-content {
+    margin-bottom: 1.5rem;
+  }
+
   .testimonial-content p {
     font-size: 1rem;
+  }
+
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .author-avatar {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials-section {
+    padding: 1.5rem 0;
+  }
+
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .testimonial-card {
+    padding: 1.25rem;
+  }
+
+  .testimonial-content p {
+    font-size: 0.95rem;
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .author-info h3 {
+    font-size: 1rem;
+  }
+
+  .author-info p {
+    font-size: 0.8rem;
   }
 }
 </style>

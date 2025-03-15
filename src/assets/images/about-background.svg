@@ -1,0 +1,64 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景漸變 -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f9ff" />
+      <stop offset="100%" stop-color="#e6f7ff" />
+    </linearGradient>
+
+    <!-- 圓形漸變 -->
+    <radialGradient id="circle-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="rgba(64, 158, 255, 0.7)" />
+      <stop offset="100%" stop-color="rgba(64, 158, 255, 0.1)" />
+    </radialGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="url(#bg-gradient)" />
+
+  <!-- 社群活動元素：人物剪影 -->
+  <g transform="translate(400, 300)" opacity="0.8">
+    <!-- 中心人物 -->
+    <circle cx="0" cy="0" r="40" fill="rgba(64, 158, 255, 0.9)" />
+    <circle cx="0" cy="-25" r="15" fill="rgba(64, 158, 255, 0.9)" />
+
+    <!-- 周圍人物 -->
+    <g transform="rotate(0)">
+      <circle cx="100" cy="0" r="30" fill="rgba(64, 158, 255, 0.7)" />
+      <circle cx="100" cy="-20" r="12" fill="rgba(64, 158, 255, 0.7)" />
+    </g>
+
+    <g transform="rotate(72)">
+      <circle cx="100" cy="0" r="30" fill="rgba(64, 158, 255, 0.7)" />
+      <circle cx="100" cy="-20" r="12" fill="rgba(64, 158, 255, 0.7)" />
+    </g>
+
+    <g transform="rotate(144)">
+      <circle cx="100" cy="0" r="30" fill="rgba(64, 158, 255, 0.7)" />
+      <circle cx="100" cy="-20" r="12" fill="rgba(64, 158, 255, 0.7)" />
+    </g>
+
+    <g transform="rotate(216)">
+      <circle cx="100" cy="0" r="30" fill="rgba(64, 158, 255, 0.7)" />
+      <circle cx="100" cy="-20" r="12" fill="rgba(64, 158, 255, 0.7)" />
+    </g>
+
+    <g transform="rotate(288)">
+      <circle cx="100" cy="0" r="30" fill="rgba(64, 158, 255, 0.7)" />
+      <circle cx="100" cy="-20" r="12" fill="rgba(64, 158, 255, 0.7)" />
+    </g>
+
+    <!-- 連接線 -->
+    <line x1="0" y1="0" x2="100" y2="0" stroke="rgba(64, 158, 255, 0.5)" stroke-width="2" transform="rotate(0)" />
+    <line x1="0" y1="0" x2="100" y2="0" stroke="rgba(64, 158, 255, 0.5)" stroke-width="2" transform="rotate(72)" />
+    <line x1="0" y1="0" x2="100" y2="0" stroke="rgba(64, 158, 255, 0.5)" stroke-width="2" transform="rotate(144)" />
+    <line x1="0" y1="0" x2="100" y2="0" stroke="rgba(64, 158, 255, 0.5)" stroke-width="2" transform="rotate(216)" />
+    <line x1="0" y1="0" x2="100" y2="0" stroke="rgba(64, 158, 255, 0.5)" stroke-width="2" transform="rotate(288)" />
+  </g>
+
+  <!-- 裝飾元素 -->
+  <circle cx="150" cy="150" r="8" fill="rgba(64, 158, 255, 0.6)" />
+  <circle cx="650" cy="180" r="6" fill="rgba(64, 158, 255, 0.6)" />
+  <circle cx="200" cy="450" r="10" fill="rgba(64, 158, 255, 0.6)" />
+  <circle cx="700" cy="400" r="7" fill="rgba(64, 158, 255, 0.6)" />
+</svg>

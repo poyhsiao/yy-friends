@@ -1,0 +1,39 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景漸變 -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6f7ff" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+
+    <!-- 圓形漸變 -->
+    <radialGradient id="circle-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="rgba(64, 158, 255, 0.8)" />
+      <stop offset="100%" stop-color="rgba(64, 158, 255, 0.2)" />
+    </radialGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="url(#bg-gradient)" />
+
+  <!-- 裝飾元素：圓形和連接線，代表社交網絡和連接 -->
+  <circle cx="150" cy="150" r="50" fill="url(#circle-gradient)" opacity="0.7" />
+  <circle cx="650" cy="180" r="40" fill="url(#circle-gradient)" opacity="0.5" />
+  <circle cx="400" cy="450" r="60" fill="url(#circle-gradient)" opacity="0.6" />
+  <circle cx="250" cy="350" r="30" fill="url(#circle-gradient)" opacity="0.4" />
+  <circle cx="580" cy="380" r="45" fill="url(#circle-gradient)" opacity="0.5" />
+
+  <!-- 連接線 -->
+  <line x1="150" y1="150" x2="250" y2="350" stroke="rgba(64, 158, 255, 0.4)" stroke-width="2" />
+  <line x1="250" y1="350" x2="400" y2="450" stroke="rgba(64, 158, 255, 0.4)" stroke-width="2" />
+  <line x1="400" y1="450" x2="580" y2="380" stroke="rgba(64, 158, 255, 0.4)" stroke-width="2" />
+  <line x1="580" y1="380" x2="650" y2="180" stroke="rgba(64, 158, 255, 0.4)" stroke-width="2" />
+  <line x1="650" y1="180" x2="150" y2="150" stroke="rgba(64, 158, 255, 0.4)" stroke-width="2" />
+
+  <!-- 額外的裝飾元素 -->
+  <circle cx="200" cy="200" r="5" fill="rgba(64, 158, 255, 0.8)" />
+  <circle cx="300" cy="150" r="3" fill="rgba(64, 158, 255, 0.8)" />
+  <circle cx="500" cy="250" r="4" fill="rgba(64, 158, 255, 0.8)" />
+  <circle cx="450" cy="350" r="3" fill="rgba(64, 158, 255, 0.8)" />
+  <circle cx="600" cy="300" r="5" fill="rgba(64, 158, 255, 0.8)" />
+</svg>
