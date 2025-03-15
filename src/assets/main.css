@@ -9,14 +9,14 @@
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: var(--primary-color); /* 使用自定義主題變量 */
   transition: 0.4s;
   padding: 3px;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: rgba(231, 124, 141, 0.2); /* 修改為粉紅色調 */
   }
 }
 

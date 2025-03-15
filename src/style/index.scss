@@ -1,0 +1,31 @@
+// 不直接导入Element Plus基础样式，避免循环引用
+// 导入暗黑模式变量，使用CSS文件而非SCSS
+
+// 导入自定义Element Plus配置
+@use './element' as *;
+
+// 全局样式
+body {
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background-color: var(--el-bg-color-page);
+  color: var(--el-text-color-primary);
+}
+
+a {
+  color: var(--el-color-primary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--el-color-primary-light-3);
+  }
+}
+
+code {
+  border-radius: 2px;
+  padding: 2px 4px;
+  background-color: var(--el-color-primary-light-9);
+  color: var(--el-color-primary);
+}

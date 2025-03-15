@@ -8,7 +8,7 @@
   --vt-c-black-soft: #222222;
   --vt-c-black-mute: #282828;
 
-  --vt-c-indigo: #2c3e50;
+  --vt-c-indigo: #d87aa0; /* 修改為柔和粉紫色 */
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
   --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
@@ -49,15 +49,15 @@
   /* 新增元素UI變量 */
   --card-bg-color: white;
   --card-bg-color-dark: var(--vt-c-black-soft);
-  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --card-shadow: 0 4px 12px rgba(216, 122, 160, 0.1); /* 修改陰影顏色 */
   --card-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --card-shadow-hover: 0 8px 24px rgba(216, 122, 160, 0.15); /* 修改陰影顏色 */
   --card-shadow-hover-dark: 0 8px 24px rgba(0, 0, 0, 0.4);
 
   /* 新增主題色變量 */
-  --primary-color: var(--el-color-primary);
-  --primary-color-light: var(--el-color-primary-light-3);
-  --primary-color-dark: var(--el-color-primary-dark-2);
+  --primary-color: #d87aa0;
+  --primary-color-light: #e5a0bc;
+  --primary-color-dark: #b6678a;
 
   /* 過渡效果 */
   --transition-duration: 0.3s;

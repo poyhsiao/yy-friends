@@ -1,14 +1,32 @@
 {
   "compilerOptions": {
+    "target": "esnext",
+    "jsx": "preserve",
+    "lib": ["esnext", "dom"],
+    "useDefineForClassFields": true,
     "baseUrl": ".",
-    "types": ["unplugin-icons/types/vue", "vite/client", "vitest/globals"],
+    "module": "esnext",
+    "moduleResolution": "bundle",
+    "types": [
+      "unplugin-icons/types/vue",
+      "vite/client",
+      "vitest/globals",
+      "unplutin-vue-router/client"
+    ],
     "paths": {
       "@/*": ["./src/*"]
     },
+    "resolveJsonModule": true,
+    "strict": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
     "composite": true,
     "skipLibCheck": true
   },
-  "include": ["src"],
+  "vueCompilerOptions": {
+    "target": 3
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "files": [],
   "references": [
     {

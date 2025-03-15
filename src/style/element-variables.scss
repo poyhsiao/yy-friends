@@ -1,0 +1,11 @@
+// 定义 Element Plus 的命名空间
+$namespace: 'el';
+
+// 导入 Element Plus 的变量和混合
+@use "element-plus/theme-chalk/src/common/var.scss" as *;
+@use "element-plus/theme-chalk/src/mixins/mixins.scss" as *;
+
+// 如果需要自定义变量，可以在这里添加，但不要重复定义 $namespace
+// 例如：
+// $primary-color: #409EFF;
+// $success-color: #67C23A;

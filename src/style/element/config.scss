@@ -1,0 +1,11 @@
+// 设置命名空间
+$namespace: 'friends' !default;
+
+// 导入 Element Plus 变量 - 使用不同的方式配置
+@use 'element-plus/theme-chalk/src/mixins/config.scss' as config with (
+  $namespace: 'friends'
+);
+
+@use 'element-plus/theme-chalk/src/common/var.scss' as var with (
+  $colors: ()
+);

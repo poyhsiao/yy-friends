@@ -1,0 +1,22 @@
+// 暗黑模式变量
+$--colors: (
+  'primary': (
+    'base': #d87aa0,
+  ),
+  'success': (
+    'base': #9ac9b0,
+  ),
+  'warning': (
+    'base': #f9c9a3,
+  ),
+  'info': (
+    'base': #b89ac9,
+  ),
+  'danger': (
+    'base': #e77a9a,
+  ),
+);
+
+@forward 'element-plus/theme-chalk/src/dark/var.scss' with (
+  $colors: $--colors
+);

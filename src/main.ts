@@ -1,5 +1,6 @@
 import './assets/main.css';
-
+import './assets/theme-vars.css';
+import './style/index.scss';
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import ElementPlus from 'element-plus';

@@ -11,6 +11,7 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import Inspect from 'vite-plugin-inspect';
+import Unocss from 'unocss/vite';
 
 const pathSrc = path.resolve(__dirname, 'src');
 
@@ -28,7 +29,9 @@ export default defineConfig({
       // Auto import functions from Element Plus, e.g. ElMessage, ElMessageBox... (with style)
       // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
       resolvers: [
-        ElementPlusResolver(),
+        ElementPlusResolver({
+          importStyle: 'sass',
+        }),
 
         // Auto import icon components
         // 自动导入图标组件
@@ -45,6 +48,9 @@ export default defineConfig({
     }),
     Components({
       resolvers: [
+        ElementPlusResolver({
+          importStyle: 'sass',
+        }),
         // Auto register icon components
         // 自动注册图标组件
         IconsResolver({
@@ -56,7 +62,6 @@ export default defineConfig({
         }),
         // Auto register Element Plus components
         // 自动导入 Element Plus 组件
-        ElementPlusResolver(),
       ],
 
       dts: path.resolve(pathSrc, 'components.d.ts'),
@@ -69,7 +74,17 @@ export default defineConfig({
       autoInstall: true,
     }),
     Inspect(),
+    Unocss(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @use "@/style/element/index.scss" as *;
+        `,
+      },
+    },
+  },
   resolve: {
     alias: {
       // '@': fileURLToPath(new URL('./src', import.meta.url)),

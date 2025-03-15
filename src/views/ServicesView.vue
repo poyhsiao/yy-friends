@@ -124,7 +124,7 @@ const testimonials = [
   padding: 2rem;
   width: 100%;
   margin: 0;
-  background-color: var(--el-bg-color-page, #faf8f6);
+  background-color: var(--el-bg-color-page);
 }
 
 .services-header {
@@ -136,7 +136,7 @@ const testimonials = [
 
 .services-header h1 {
   font-size: 2.5rem;
-  color: var(--el-color-primary, #e57cd8);
+  color: var(--el-color-primary);
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
@@ -150,13 +150,13 @@ const testimonials = [
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background-color: var(--el-color-primary, #e57cd8);
+  background-color: var(--el-color-primary);
   border-radius: 2px;
 }
 
 .services-header p {
   font-size: 1.2rem;
-  color: var(--el-text-color-regular, #666);
+  color: var(--el-text-color-regular);
 }
 
 .services-list {
@@ -166,57 +166,58 @@ const testimonials = [
 
 .service-card {
   height: 100%;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 16px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
   border: none;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(240, 140, 160, 0.12);
   overflow: hidden;
-  background-color: var(--el-bg-color, #fff);
+  background-color: var(--el-bg-color);
   animation: fadeInUp 0.8s ease-out;
   margin-bottom: 1.5rem;
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(229, 124, 216, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(240, 140, 160, 0.18);
 }
 
 .service-icon {
-  width: 72px;
-  height: 72px;
-  margin: 1.5rem auto;
-  background-color: var(--el-color-primary-light-9, #fce7f6);
+  width: 80px;
+  height: 80px;
+  margin: 1.8rem auto;
+  background-color: var(--el-color-primary-light-9);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(240, 140, 160, 0.15);
 }
 
 .service-card:hover .service-icon {
   transform: scale(1.1);
-  background-color: var(--el-color-primary, #e57cd8);
+  background-color: var(--el-color-primary);
 }
 
 .service-icon .el-icon {
   font-size: 2.2rem;
-  color: var(--el-color-primary, #e57cd8);
+  color: var(--el-color-primary);
   transition: all 0.3s ease;
 }
 
 .service-card:hover .service-icon .el-icon {
-  color: var(--el-color-white, #fff);
+  color: var(--el-color-white);
 }
 
 .service-card h3 {
   font-size: 1.5rem;
-  color: var(--el-color-primary, #e57cd8);
+  color: var(--el-color-primary);
   margin-bottom: 1rem;
   text-align: center;
 }
 
 .service-card p {
-  color: var(--el-text-color-regular, #666);
+  color: var(--el-text-color-regular);
   margin-bottom: 1.5rem;
   text-align: center;
   line-height: 1.6;
@@ -234,24 +235,24 @@ const testimonials = [
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 0.8rem;
-  color: var(--el-text-color-regular, #666);
+  color: var(--el-text-color-regular);
   transition: all 0.3s ease;
 }
 
 .feature-list li:hover {
-  color: var(--el-color-primary, #e57cd8);
+  color: var(--el-color-primary);
   transform: translateX(5px);
 }
 
 .feature-list .el-icon {
-  color: var(--el-color-success, #4caf50);
+  color: var(--el-color-success);
   font-size: 1.2rem;
 }
 
 .testimonials {
   margin-top: 4rem;
   padding: 3rem 2rem;
-  background-color: var(--el-bg-color, #fff);
+  background-color: var(--el-bg-color);
   border-radius: 24px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   animation: fadeInUp 1s ease-out;
@@ -261,7 +262,7 @@ const testimonials = [
 .testimonials h2 {
   text-align: center;
   font-size: 2rem;
-  color: var(--el-color-primary, #e57cd8);
+  color: var(--el-color-primary);
   margin-bottom: 3rem;
   position: relative;
   display: inline-block;
@@ -277,7 +278,7 @@ const testimonials = [
   transform: translateX(-50%);
   width: 50px;
   height: 3px;
-  background-color: var(--el-color-primary, #e57cd8);
+  background-color: var(--el-color-primary);
   border-radius: 2px;
 }
 
@@ -285,15 +286,16 @@ const testimonials = [
   height: 100%;
   margin-bottom: 1rem;
   border: none;
-  border-radius: 16px;
-  background-color: var(--el-bg-color-page, #faf8f6);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+  background-color: var(--el-bg-color-page);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  box-shadow: 0 6px 20px rgba(240, 140, 160, 0.1);
 }
 
 .testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(229, 124, 216, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(240, 140, 160, 0.15);
 }
 
 .testimonial-content {
@@ -308,14 +310,14 @@ const testimonials = [
   top: 0;
   left: 1rem;
   font-size: 3rem;
-  color: var(--el-color-primary, #e57cd8);
+  color: var(--el-color-primary);
   opacity: 0.2;
   font-family: serif;
 }
 
 .testimonial-content p {
   font-style: italic;
-  color: var(--el-text-color-regular, #666);
+  color: var(--el-text-color-regular);
   line-height: 1.8;
   margin-top: 1rem;
 }
@@ -328,28 +330,29 @@ const testimonials = [
 }
 
 .author-avatar {
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--el-color-primary, #e57cd8);
-  transition: all 0.3s ease;
+  border: 4px solid var(--el-color-primary-light-5);
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 10px rgba(240, 140, 160, 0.2);
 }
 
 .testimonial-card:hover .author-avatar {
   transform: scale(1.1);
-  border-color: var(--el-color-success, #4caf50);
+  border-color: var(--el-color-primary);
 }
 
 .author-info h3 {
   font-size: 1.2rem;
-  color: var(--el-color-primary, #e57cd8);
+  color: var(--el-color-primary);
   margin-bottom: 0.25rem;
 }
 
 .author-info p {
   font-size: 0.95rem;
-  color: var(--el-text-color-regular, #666);
+  color: var(--el-text-color-regular);
 }
 
 @keyframes fadeInDown {
@@ -396,10 +399,6 @@ const testimonials = [
     width: 60px;
     height: 60px;
     margin: 1rem auto;
-  }
-
-  .service-icon .el-icon {
-    font-size: 1.8rem;
   }
 }
 </style>

@@ -13,13 +13,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="app" :class="{ 'dark-mode': themeStore.theme === 'dark' }">
-    <AppHeader />
-    <main class="main-content">
-      <RouterView />
-    </main>
-    <AppFooter />
-  </div>
+  <el-config-provider namespace="friends">
+    <div class="app" :class="{ 'dark-mode': themeStore.theme === 'dark' }">
+      <AppHeader />
+      <main class="main-content">
+        <RouterView />
+      </main>
+      <AppFooter />
+    </div>
+  </el-config-provider>
 </template>
 
 <style>

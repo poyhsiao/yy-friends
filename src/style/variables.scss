@@ -1,0 +1,87 @@
+@use "element-plus/theme-chalk/src/common/var.scss" as element;
+
+// 定义基础变量
+$custom-namespace: 'friends';
+
+// 背景色变量
+$bg-color: #fef4fa;
+$bg-color-page: #fdf0f7;
+$bg-color-overlay: #fef8fc;
+
+// 文本色变量
+$text-color-primary: #5a4f5e;
+$text-color-regular: #6a5f6e;
+$text-color-secondary: #8a7f8e;
+$text-color-placeholder: #a8a0aa;
+$text-color-disabled: #c0b8c2;
+
+// 边框色变量
+$border-color: #ece3df;
+$border-color-light: #f3ebe8;
+$border-color-lighter: #f8f3f1;
+$border-color-extra-light: #fcf9f7;
+$border-color-dark: #dfd6d2;
+$border-color-darker: #ccc3bf;
+
+// 填充色变量
+$fill-color: #faf6f4;
+$fill-color-light: #fdfaf8;
+$fill-color-lighter: #fefcfb;
+$fill-color-extra-light: #fffdfc;
+$fill-color-dark: #f4efec;
+$fill-color-darker: #eae4e0;
+$fill-color-blank: #ffffff;
+
+// 主题色变量
+$colors: (
+  'primary': (
+    'base': #d87aa0,
+    'light-3': #e5a0bc,
+    'light-5': #efc0d4,
+    'light-7': #f7dfe9,
+    'light-8': #faedf3,
+    'light-9': #fdf6f9,
+    'dark-2': #b6678a,
+  ),
+  'success': (
+    'base': #9ac9b0,
+    'light-3': #b7d9c6,
+    'light-5': #cde5d7,
+    'light-7': #e3f0e8,
+    'light-8': #eef6f1,
+    'light-9': #f6faf8,
+    'dark-2': #7eab94,
+  ),
+  'warning': (
+    'base': #f9c9a3,
+    'light-3': #fad7bc,
+    'light-5': #fce4d1,
+    'light-7': #fdf0e5,
+    'light-8': #fef5ee,
+    'light-9': #fefaf6,
+    'dark-2': #e0b08a,
+  ),
+  'info': (
+    'base': #b89ac9,
+    'light-3': #cbb2d9,
+    'light-5': #dccae6,
+    'light-7': #ede2f2,
+    'light-8': #f4edf8,
+    'light-9': #f9f6fb,
+    'dark-2': #9c82ab,
+  ),
+  'danger': (
+    'base': #e77a9a,
+    'light-3': #ee9cb3,
+    'light-5': #f3bdcc,
+    'light-7': #f9dee5,
+    'light-8': #fcebf0,
+    'light-9': #fef5f8,
+    'dark-2': #c66683,
+  ),
+);
+
+// 这里定义你自己的变量，但不要重复定义 $namespace
+// 例如：
+$primary-color: #409EFF;
+$success-color: #67C23A;
