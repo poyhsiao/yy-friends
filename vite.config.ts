@@ -38,9 +38,10 @@ export default defineConfig({
         IconsResolver({
           alias: {
             msi: 'material-symbols-light',
+            ipo: 'icon-park-outline',
           },
           prefix: 'Icon',
-          enabledCollections: ['ep', 'mdi', 'msi', 'ic'],
+          enabledCollections: ['ep', 'mdi', 'msi', 'ic', 'ipo'],
         }),
       ],
 
@@ -56,9 +57,10 @@ export default defineConfig({
         IconsResolver({
           alias: {
             msi: 'material-symbols-light',
+            ipo: 'icon-park-outline',
           },
           prefix: 'Icon',
-          enabledCollections: ['ep', 'mdi', 'msi', 'ic'],
+          enabledCollections: ['ep', 'mdi', 'msi', 'ic', 'ipo'],
         }),
         // Auto register Element Plus components
         // 自动导入 Element Plus 组件
@@ -70,6 +72,7 @@ export default defineConfig({
       compiler: 'vue3',
       alias: {
         msi: 'material-symbols-light',
+        ipo: 'icon-park-outline',
       },
       autoInstall: true,
     }),

@@ -21,9 +21,7 @@
           歡迎訪問 YY Friends
           網站。通過訪問和使用本網站，您同意受本使用條款的約束。如果您不同意這些條款，請不要使用本網站。
         </p>
-        <p>
-          我們保留隨時修改這些條款的權利。您有責任定期查看這些條款。您在修改後繼續使用本網站，即表示您接受修改後的條款。
-        </p>
+        <p>我們保留隨時修改這些條款的權利。您有責任定期查看這些條款。您在修改後繼續使用本網站，即表示您接受修改後的條款。</p>
       </div>
 
       <div class="content-section">
@@ -46,9 +44,7 @@
           本網站及其內容（包括但不限於文本、圖形、徽標、圖標、圖像、音頻剪輯、數字下載和軟件）是 YY
           Friends 或其內容提供商的財產，受國際版權、商標、專利和其他知識產權法律的保護。
         </p>
-        <p>
-          未經我們明確書面許可，您不得複製、修改、發布、傳輸、分發、展示、執行、複製或創建本網站或其內容的衍生作品。
-        </p>
+        <p>未經我們明確書面許可，您不得複製、修改、發布、傳輸、分發、展示、執行、複製或創建本網站或其內容的衍生作品。</p>
       </div>
 
       <div class="content-section">
@@ -103,16 +99,12 @@
 
       <div class="content-section">
         <h2>爭議解決</h2>
-        <p>
-          因這些條款或您使用本網站而產生的任何爭議，應首先嘗試通過友好協商解決。如果無法通過協商解決，則應提交台北地方法院進行專屬管轄。
-        </p>
+        <p>因這些條款或您使用本網站而產生的任何爭議，應首先嘗試通過友好協商解決。如果無法通過協商解決，則應提交台北地方法院進行專屬管轄。</p>
       </div>
 
       <div class="content-section">
         <h2>可分割性</h2>
-        <p>
-          如果這些條款的任何條款被認定為無效或不可執行，該條款應在最小必要範圍內被修改，使其有效且可執行，而不影響其餘條款的有效性和可執行性。
-        </p>
+        <p>如果這些條款的任何條款被認定為無效或不可執行，該條款應在最小必要範圍內被修改，使其有效且可執行，而不影響其餘條款的有效性和可執行性。</p>
       </div>
 
       <div class="content-section">
@@ -120,13 +112,19 @@
         <p>如果您對這些使用條款有任何問題或疑慮，請通過以下方式與我們聯繫：</p>
         <ul class="contact-list">
           <li>
-            <el-icon><ep:message /></el-icon> 電子郵件：info@yyfriends.com
+            <el-icon>
+              <ep:message />
+            </el-icon>電子郵件：info@yyfriends.com
           </li>
           <li>
-            <el-icon><ep:phone /></el-icon> 電話：+886 2 1234 5678
+            <el-icon>
+              <ep:phone />
+            </el-icon>電話：+886 2 1234 5678
           </li>
           <li>
-            <el-icon><ep:location /></el-icon> 地址：台北市信義區松高路1號
+            <el-icon>
+              <ep:location />
+            </el-icon>地址：台北市信義區松高路1號
           </li>
         </ul>
       </div>
@@ -150,7 +148,7 @@
 
 .page-header h1 {
   font-size: 2.5rem;
-  color: var(--el-color-primary);
+  color: var(--el-text-color-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -162,7 +160,7 @@
 .content-container {
   max-width: 800px;
   margin: 0 auto;
-  background-color: white;
+  background-color: var(--el-bg-color);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 2rem;
@@ -174,15 +172,16 @@
 
 .content-section h2 {
   font-size: 1.5rem;
-  color: var(--el-color-primary);
+  color: var(--el-text-color-primary);
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--el-border-color-lighter);
+  border-bottom: 1px solid var(--el-border-color);
 }
 
 .content-section p {
   margin-bottom: 1rem;
   line-height: 1.6;
+  color: var(--el-text-color-regular);
 }
 
 .content-section ul {
@@ -193,6 +192,7 @@
 .content-section li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
+  color: var(--el-text-color-regular);
 }
 
 .contact-list {

@@ -21,9 +21,7 @@
           YY
           Friends（以下簡稱「我們」）非常重視您的隱私和個人信息保護。本隱私政策旨在向您說明我們如何收集、使用、存儲和保護您的個人信息，以及您對這些信息所擁有的權利。
         </p>
-        <p>
-          請您在使用我們的服務前仔細閱讀本隱私政策。當您使用我們的服務時，即表示您已同意我們按照本隱私政策收集、使用、存儲和保護您的個人信息。
-        </p>
+        <p>請您在使用我們的服務前仔細閱讀本隱私政策。當您使用我們的服務時，即表示您已同意我們按照本隱私政策收集、使用、存儲和保護您的個人信息。</p>
       </div>
 
       <div class="content-section">
@@ -31,19 +29,16 @@
         <p>我們可能會收集以下類型的信息：</p>
         <ul>
           <li>
-            <strong>個人識別信息</strong
-            >：包括但不限於您的姓名、電子郵件地址、電話號碼、郵寄地址等。
+            <strong>個人識別信息</strong>：包括但不限於您的姓名、電子郵件地址、電話號碼、郵寄地址等。
           </li>
           <li>
-            <strong>設備信息</strong
-            >：包括但不限於您使用的設備類型、操作系統、瀏覽器類型、IP地址等。
+            <strong>設備信息</strong>：包括但不限於您使用的設備類型、操作系統、瀏覽器類型、IP地址等。
           </li>
           <li>
             <strong>使用數據</strong>：包括但不限於您訪問我們網站的時間、瀏覽的頁面、點擊的鏈接等。
           </li>
           <li>
-            <strong>Cookie和類似技術</strong
-            >：我們使用Cookie和類似技術來收集和存儲有關您如何使用我們服務的信息。
+            <strong>Cookie和類似技術</strong>：我們使用Cookie和類似技術來收集和存儲有關您如何使用我們服務的信息。
           </li>
         </ul>
       </div>
@@ -64,30 +59,23 @@
 
       <div class="content-section">
         <h2>信息共享</h2>
-        <p>
-          我們不會出售、出租或交易您的個人信息給第三方。但在以下情況下，我們可能會共享您的信息：
-        </p>
+        <p>我們不會出售、出租或交易您的個人信息給第三方。但在以下情況下，我們可能會共享您的信息：</p>
         <ul>
           <li>
-            <strong>服務提供商</strong
-            >：我們可能會與幫助我們提供服務的第三方服務提供商共享您的信息，如支付處理商、電子郵件服務提供商等。
+            <strong>服務提供商</strong>：我們可能會與幫助我們提供服務的第三方服務提供商共享您的信息，如支付處理商、電子郵件服務提供商等。
           </li>
           <li>
-            <strong>法律要求</strong
-            >：如果法律要求我們披露您的信息，或者為了保護我們或他人的權利、財產或安全，我們可能會披露您的信息。
+            <strong>法律要求</strong>：如果法律要求我們披露您的信息，或者為了保護我們或他人的權利、財產或安全，我們可能會披露您的信息。
           </li>
           <li>
-            <strong>業務轉讓</strong
-            >：如果我們參與合併、收購或資產出售，您的信息可能會作為交易的一部分被轉讓。
+            <strong>業務轉讓</strong>：如果我們參與合併、收購或資產出售，您的信息可能會作為交易的一部分被轉讓。
           </li>
         </ul>
       </div>
 
       <div class="content-section">
         <h2>信息安全</h2>
-        <p>
-          我們採取適當的技術和組織措施來保護您的個人信息不被未經授權的訪問、使用或披露。然而，請注意，沒有任何網絡傳輸或電子存儲方法是100%安全的。
-        </p>
+        <p>我們採取適當的技術和組織措施來保護您的個人信息不被未經授權的訪問、使用或披露。然而，請注意，沒有任何網絡傳輸或電子存儲方法是100%安全的。</p>
       </div>
 
       <div class="content-section">
@@ -106,16 +94,12 @@
 
       <div class="content-section">
         <h2>兒童隱私</h2>
-        <p>
-          我們的服務不面向13歲以下的兒童。我們不會故意收集13歲以下兒童的個人信息。如果您發現我們可能收集了13歲以下兒童的個人信息，請立即聯繫我們，我們將採取措施刪除這些信息。
-        </p>
+        <p>我們的服務不面向13歲以下的兒童。我們不會故意收集13歲以下兒童的個人信息。如果您發現我們可能收集了13歲以下兒童的個人信息，請立即聯繫我們，我們將採取措施刪除這些信息。</p>
       </div>
 
       <div class="content-section">
         <h2>隱私政策的變更</h2>
-        <p>
-          我們可能會不時更新本隱私政策。當我們進行重大變更時，我們會在網站上發布更新後的隱私政策，並在適當的情況下通知您。我們建議您定期查看本頁面以了解最新的隱私保護實踐。
-        </p>
+        <p>我們可能會不時更新本隱私政策。當我們進行重大變更時，我們會在網站上發布更新後的隱私政策，並在適當的情況下通知您。我們建議您定期查看本頁面以了解最新的隱私保護實踐。</p>
       </div>
 
       <div class="content-section">
@@ -123,13 +107,19 @@
         <p>如果您對本隱私政策有任何問題或疑慮，請通過以下方式與我們聯繫：</p>
         <ul class="contact-list">
           <li>
-            <el-icon><ep:message /></el-icon> 電子郵件：info@yyfriends.com
+            <el-icon>
+              <ep:message />
+            </el-icon>電子郵件：info@yyfriends.com
           </li>
           <li>
-            <el-icon><ep:phone /></el-icon> 電話：+886 2 1234 5678
+            <el-icon>
+              <ep:phone />
+            </el-icon>電話：+886 2 1234 5678
           </li>
           <li>
-            <el-icon><ep:location /></el-icon> 地址：台北市信義區松高路1號
+            <el-icon>
+              <ep:location />
+            </el-icon>地址：台北市信義區松高路1號
           </li>
         </ul>
       </div>
@@ -153,7 +143,7 @@
 
 .page-header h1 {
   font-size: 2.5rem;
-  color: var(--el-color-primary);
+  color: var(--el-text-color-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -165,7 +155,7 @@
 .content-container {
   max-width: 800px;
   margin: 0 auto;
-  background-color: white;
+  background-color: var(--el-bg-color);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 2rem;
@@ -177,15 +167,16 @@
 
 .content-section h2 {
   font-size: 1.5rem;
-  color: var(--el-color-primary);
+  color: var(--el-text-color-primary);
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--el-border-color-lighter);
+  border-bottom: 1px solid var(--el-border-color);
 }
 
 .content-section p {
   margin-bottom: 1rem;
   line-height: 1.6;
+  color: var(--el-text-color-regular);
 }
 
 .content-section ul {
@@ -196,6 +187,7 @@
 .content-section li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
+  color: var(--el-text-color-regular);
 }
 
 .contact-list {

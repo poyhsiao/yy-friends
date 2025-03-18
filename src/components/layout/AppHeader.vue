@@ -6,7 +6,7 @@
  * 支持响应式设计，在移动设备上会转换为抽屉菜单
  */
 import { ref, computed, onMounted } from 'vue';
-import { RouterLink, useRoute } from 'vue-router';
+import { RouterLink, useRoute, useRouter } from 'vue-router';
 import { useThemeStore } from '@/stores/theme';
 
 // 使用主题 store
@@ -57,6 +57,18 @@ onMounted(() => {
   // 初始化主题
   themeStore.initTheme();
 });
+
+// 获取路由器实例，用於程式化導航
+const router = useRouter();
+
+// 跳轉到登入頁面
+const navigateToLogin = () => {
+  router.push('/auth');
+  // 如果是在移動端，關閉抽屜菜單
+  if (mobileMenuVisible.value) {
+    closeMobileMenu();
+  }
+};
 </script>
 
 <template>
@@ -93,20 +105,15 @@ onMounted(() => {
           <el-icon v-else><Moon /></el-icon>
         </el-button>
 
-        <!-- 設定按鈕 -->
-        <el-button type="info" size="small" class="settings-button">
-          <el-icon><Setting /></el-icon>
-        </el-button>
-
-        <!-- 登入按鈕 (僅桌面端顯示) -->
-        <el-button type="primary" size="small" class="login-button">
+        <!-- 登入按鈕 (僅桌面端顯示) - 修改為可點擊跳轉 -->
+        <el-button type="primary" size="small" class="login-button" @click="navigateToLogin">
           <el-icon><User /></el-icon>
           登入
         </el-button>
 
         <!-- 移动端菜单按钮 -->
         <el-button v-if="windowWidth < 768" class="menu-toggle" @click="toggleMobileMenu">
-          <el-icon><Menu /></el-icon>
+          <el-icon><Setting /></el-icon>
         </el-button>
       </div>
 
@@ -146,7 +153,7 @@ onMounted(() => {
               設定
             </el-button>
 
-            <el-button type="primary" class="mobile-login-button">
+            <el-button type="primary" class="mobile-login-button" @click="navigateToLogin">
               <el-icon><User /></el-icon>
               登入
             </el-button>
@@ -159,11 +166,11 @@ onMounted(() => {
 
 <style scoped>
 .app-header {
-  position: fixed; /* 改為 fixed 使其始終貼緊頁面最上方 */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%; /* 確保寬度延伸至整個頁面 */
+  width: 100%;
   z-index: 100;
   background-color: var(--el-bg-color);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -179,7 +186,7 @@ onMounted(() => {
 }
 
 .header-container {
-  width: 100%; /* 確保容器寬度為 100% */
+  width: 100%;
   padding: 0.8rem 1rem;
   display: flex;
   align-items: center;
@@ -202,11 +209,38 @@ onMounted(() => {
   height: 40px;
   width: 40px;
   margin-right: 0.5rem;
+  /* 增加 logo 的對比度和可見性 */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: filter 0.3s, transform 0.3s;
+}
+
+/* 為 logo 添加懸停效果 */
+.logo-link:hover .logo {
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.3));
+  transform: scale(1.05);
 }
 
 .logo-text {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700; /* 增加字重 */
+  /* 添加文字陰影以增強可見性 */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, var(--el-color-primary) 0%, var(--el-color-primary-dark-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* 使用漸變色替代純色 */
+}
+
+/* 暗黑模式下的 logo 樣式調整 */
+.dark-theme .logo {
+  filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1));
+}
+
+.dark-theme .logo-text {
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, var(--el-color-primary-light-3) 0%, var(--el-color-primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .desktop-nav {

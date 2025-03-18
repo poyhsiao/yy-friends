@@ -7,6 +7,8 @@ import ElementPlus from 'element-plus';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import 'element-plus/dist/index.css';
 import 'element-plus/theme-chalk/dark/css-vars.css';
+import zhTW from 'element-plus/dist/locale/zh-tw';
+import { useAuthStore } from './stores/auth';
 
 import App from './App.vue';
 import router from './router';
@@ -20,6 +22,12 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 app.use(createPinia());
 app.use(router);
-app.use(ElementPlus);
+app.use(ElementPlus, {
+  locale: zhTW,
+});
 
-app.mount('#app');
+const authStore = useAuthStore();
+
+authStore.initialize().then(() => {
+  app.mount('#app');
+});

@@ -4,8 +4,8 @@
  *
  * 展示平台提供的主要功能和服務
  */
-import { RouterLink } from 'vue-router';
 import { useThemeStore } from '@/stores/theme';
+import ServiceCard from '@/components/home/ServiceCard.vue';
 
 // 獲取主題狀態
 const themeStore = useThemeStore();
@@ -16,21 +16,25 @@ const services = [
     id: 1,
     title: '智能配對',
     description: '運用先進的演算法，為您推薦最適合的交友對象。',
+    icon: 'Icon-ipo-ai-intelligence',
   },
   {
     id: 2,
     title: '即時聊天',
     description: '安全、便捷的即時通訊功能，讓您輕鬆與新朋友交流。',
+    icon: 'Icon-ipo-chat-bubble',
   },
   {
     id: 3,
     title: '興趣社群',
     description: '基於共同興趣的社群活動，讓您找到志同道合的夥伴。',
+    icon: 'Icon-ipo-group',
   },
   {
     id: 4,
     title: '活動配對',
     description: '定期舉辦線上線下活動，創造自然交友的機會。',
+    icon: 'Icon-ipo-calendar',
   },
 ];
 </script>
@@ -43,19 +47,7 @@ const services = [
     </div>
 
     <div class="services-grid">
-      <div v-for="service in services" :key="service.id" class="service-card">
-        <div class="service-icon">
-          <el-icon v-if="service.id === 1"><Icon-mdi-magic-staff /></el-icon>
-          <el-icon v-else-if="service.id === 2"><Icon-mdi-chat-processing-outline /></el-icon>
-          <el-icon v-else-if="service.id === 3"><Icon-mdi-account-group /></el-icon>
-          <el-icon v-else><Icon-mdi-calendar /></el-icon>
-        </div>
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
-        <RouterLink :to="`/services#${service.id}`" class="learn-more">
-          了解更多 <el-icon><arrow-right /></el-icon>
-        </RouterLink>
-      </div>
+      <ServiceCard v-for="service in services" :key="service.id" :service="service" />
     </div>
   </section>
 </template>
@@ -95,7 +87,7 @@ const services = [
   padding: 0 1rem;
 }
 
-.service-card {
+/* .service-card {
   background-color: white;
   padding: 2rem;
   border-radius: 16px;
@@ -105,14 +97,14 @@ const services = [
     box-shadow 0.3s ease,
     background-color 0.3s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+} */
 
-.service-card:hover {
+/* .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
+} */
 
-.service-icon {
+/* .service-icon {
   width: 64px;
   height: 64px;
   margin: 0 auto 1.5rem;
@@ -122,15 +114,15 @@ const services = [
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s;
-}
+} */
 
-.service-icon .el-icon {
+/* .service-icon .el-icon {
   font-size: 2rem;
   color: var(--el-color-primary);
   transition: color 0.3s;
-}
+} */
 
-.service-card h3 {
+/* .service-card h3 {
   font-size: 1.5rem;
   color: var(--el-color-primary);
   margin-bottom: 1rem;
@@ -156,7 +148,7 @@ const services = [
 
 .learn-more:hover {
   color: var(--el-color-primary-light-3);
-}
+} */
 
 /* 暗黑模式樣式 */
 .dark-theme .section-header h2 {
@@ -167,7 +159,7 @@ const services = [
   color: var(--el-text-color-primary);
 }
 
-.dark-theme .service-card {
+/* .dark-theme .service-card {
   background-color: var(--el-bg-color-overlay);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -198,7 +190,7 @@ const services = [
 
 .dark-theme .learn-more:hover {
   color: var(--el-color-primary-light-5);
-}
+} */
 
 @media (max-width: 768px) {
   .services-section {
