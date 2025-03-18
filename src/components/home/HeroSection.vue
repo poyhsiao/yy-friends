@@ -24,7 +24,7 @@ const themeStore = useThemeStore();
         專為女性打造的溫馨友善社群，讓妳輕鬆找到志同道合的新朋友，分享生活、互相支持。
       </p>
       <div class="hero-buttons">
-        <RouterLink to="/register">
+        <RouterLink to="/auth">
           <el-button type="primary" size="large"><Icon icon="material-symbols:person-add" style="margin-right: 0.5em;" />立即加入</el-button>
         </RouterLink>
         <RouterLink to="/about">
